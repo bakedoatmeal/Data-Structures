@@ -3,7 +3,7 @@ def histogram_dict(source_text):
     text = f.read()
     f.close()
     text = text.lower()
-    punctuation = '''!()-[]{\}\;:"\,<>./?@#$%^&*_~'''
+    punctuation = '''!()-[]{\}\;:"”“\,<>./?@#$%^&*_~'''
     histogram = {}
 
     # remove punctuation

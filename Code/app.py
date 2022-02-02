@@ -4,17 +4,18 @@ from histogram import histogram_dict
 from sampling import getWeightedWord
 
 app = Flask(__name__)
-hist = {}
 
 @app.before_first_request
 def before_first_request():
     """Runs only once at Flask startup"""
     # TODO: Initialize your histogram, hash table, or markov chain here.
     hist = histogram_dict('sampletext.txt')
+    return hist
 
 @app.route("/")
 def home():
-  word = getWeightedWord(hist)
+  hist_returned = before_first_request()
+  word = getWeightedWord(hist_returned)
   return f"Here's a random word from Sherlock Holmes: {word}"
 
 

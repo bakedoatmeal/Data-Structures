@@ -1,20 +1,21 @@
 """Main script, uses other modules to generate sentences."""
 from flask import Flask
-
+from histogram import histogram_dict
+from sampling import getWeightedWord
 
 app = Flask(__name__)
-
+hist = {}
 
 @app.before_first_request
 def before_first_request():
     """Runs only once at Flask startup"""
     # TODO: Initialize your histogram, hash table, or markov chain here.
-
+    hist = histogram_dict('sampletext.txt')
 
 @app.route("/")
 def home():
-    """Route that returns a web page containing the generated text."""
-    return "<p>TODO: Return a word here!</p>"
+  word = getWeightedWord(hist)
+  return f"Here's a random word from Sherlock Holmes: {word}"
 
 
 if __name__ == "__main__":

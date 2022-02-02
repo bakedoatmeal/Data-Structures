@@ -8,4 +8,4 @@ app = Flask(__name__)
 def hello_world():
   hist = histogram_dict('sampletext.txt')
   word = getWeightedWord(hist)
-  return word
+  return f"Here's a random word from Sherlock Holmes: {word}"

@@ -1,7 +1,6 @@
 """Main script, uses other modules to generate sentences."""
 from flask import Flask
-from histogram import histogram_dict
-from sampling import getWeightedWord
+from dictogram import Dictogram
 
 app = Flask(__name__)
 
@@ -9,14 +8,14 @@ app = Flask(__name__)
 def before_first_request():
     """Runs only once at Flask startup"""
     # TODO: Initialize your histogram, hash table, or markov chain here.
-    hist = histogram_dict('sampletext.txt')
+    hist = Dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
     return hist
 
 @app.route("/")
 def home():
   hist_returned = before_first_request()
-  word = getWeightedWord(hist_returned)
-  return f"Here's a random word from Sherlock Holmes: {word}"
+  word = hist_returned.sample()
+  return f"Here's a random word: {word}"
 
 
 if __name__ == "__main__":

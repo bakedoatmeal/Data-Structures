@@ -90,7 +90,7 @@ class ListogramTest(unittest.TestCase):
     def test_sample(self):
         histogram = Listogram(self.fish_words)
         # Create a list of 10,000 word samples from histogram
-        samples_list = [histogram.sample() for _ in range(10000)]
+        samples_list = [histogram.sample() for _ in range(100000)]
         # Create a histogram to count frequency of each word
         samples_hist = Listogram(samples_list)
         # Check each word in original histogram

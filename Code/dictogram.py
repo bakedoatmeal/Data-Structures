@@ -118,8 +118,7 @@ def main():
         fish_text = 'one fish two fish red fish blue fish'
         print_histogram(fish_text.split())
         # Test histogram on words in a long repetitive sentence
-        woodchuck_text = ('how much wood would a wood chuck chuck'
-                          ' if a wood chuck could chuck wood')
+        woodchuck_text = ('I like dogs and you like dogs. I like cats but you hate cats')
         print_histogram(woodchuck_text.split())
 
 

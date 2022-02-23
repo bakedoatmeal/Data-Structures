@@ -104,6 +104,14 @@ class LinkedList:
                 node = node.next
         return False
 
+    def find_if_matches(self, matching_function):
+        node = self.head
+        while node: 
+            if matching_function(node.data):
+                return node.data
+            node = node.next
+        return None
+
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
         TODO: Best case running time: O(???) Why and under what conditions?
@@ -139,9 +147,6 @@ class LinkedList:
             node = node.next
 
         raise ValueError('Item not found: {}'.format(item))
-
-
-
 
 if __name__ == "__main__":
     my_ll = LinkedList(["A", "B", "C"])

@@ -74,9 +74,7 @@ class HashTable(object):
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         bucket_index = hash(key) % len(self.buckets)
-        print('index: ', bucket_index)
         bucket = self.buckets[bucket_index]
-        print('items: ', bucket.items())
         found = bucket.find_if_matches(lambda entry: entry[0] == key)
         if found is not None: 
             return True
@@ -113,7 +111,6 @@ class HashTable(object):
                 return
             node = node.next
         bucket.append((key, value))
-        print(self.keys())
         # TODO: If found, update value associated with given key
         # TODO: Otherwise, insert given key-value entry into bucket
             

@@ -38,7 +38,7 @@ app = Flask(__name__)
 
 source = read_file('sanderson2.txt')
 tokens = tokenize(source)
-markov_chain = build(tokens, 2)
+markov_chain = build(tokens, 3)
 
 # @app.before_first_request
 # def before_first_request():

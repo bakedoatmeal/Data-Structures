@@ -7,8 +7,9 @@ def read_csv(filename):
     dict = {}
     for character, line in reader:
       if character not in dict: 
-        dict[character] = ''
-      dict[character] += line
+        dict[character] = line
+      else: 
+        dict[character] += " " + line
   return dict
 
 if __name__ == '__main__':

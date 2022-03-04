@@ -88,5 +88,6 @@ if __name__ == '__main__':
   simpsonsDict = read_csv('./simpsons_dataset.csv')
   text3 = tokenize(simpsonsDict['Homer Simpson'])
   chain = build(text3, 3)
-  write_sentence(20, chain)
+  sentence = write_sentence(20, chain)
+  print(sentence)
 # print(len(chain.keys()))

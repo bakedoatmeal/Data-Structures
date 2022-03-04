@@ -3,6 +3,7 @@ from flask import Flask
 from markovChainNth import build, write_sentence
 from flask import request, render_template, redirect
 from readtext import read_file
+from readcsv import read_csv
 import twitter
 from tokens import tokenize
 
@@ -36,8 +37,8 @@ app = Flask(__name__)
 # word_list = read_file("fish.txt")
 # histogram = Dictogram(word_list)
 
-source = read_file('sanderson2.txt')
-tokens = tokenize(source)
+source = read_csv('simpsons_dataset.csv')
+tokens = tokenize(source['Homer Simpson'])
 markov_chain = build(tokens, 3)
 
 # @app.before_first_request

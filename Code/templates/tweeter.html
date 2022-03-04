@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<blockquote>{{ sentence }}</blockquote>
+<blockquote>Homer Simpson once said: {{ sentence }}</blockquote>
 <form action="/tweet" method="post">
    <input type="hidden" name="sentence" value="{{ sentence }}">
    <button type="submit">Tweet this</button>

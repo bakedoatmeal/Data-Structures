@@ -29,6 +29,15 @@ def build(word_list):
     
 chain = build(text2)
 
+"""
+create markov chain dict
+for three words at a time in wordlist:
+  see if tuple of first two words are in markovchain
+  if not
+    add tuple of first two words to markovchain, value is a hictogram  
+  markovchain[tuple of first two words].add_count(tuple of second and third word)
+"""
+
 # 2: Walk on chain
 """
 do we need a hist of the whole text? 

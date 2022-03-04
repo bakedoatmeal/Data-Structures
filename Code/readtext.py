@@ -20,6 +20,6 @@ def read_file(filename):
             text = text.replace(element, "")
     
     word_list = text.split(' ')
-    print(word_list)
+    # print(word_list)
   return word_list
   

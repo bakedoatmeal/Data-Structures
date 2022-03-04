@@ -15,16 +15,12 @@ loop through words
       markovchain[firstword][secondword] += 1
     
 """
-text = 'Let’s look at a concrete example. Say we start at state A. Our first random choice is between states man and dog,, each with probability 1/2 - say we take dog,. Now we don’t have any choice,'.split(' ')
-text2 = read_file("./sanderson.txt")
 
-simpsonsDict = read_csv('./simpsons_dataset.csv')
-text3 = tokenize(simpsonsDict['Homer Simpson'])
 
 def build(word_list, n):
   markovchain = {}
   if len(word_list) < n:
-    return   
+    return {}  
 
   window = word_list[0:n:1]
   index = n - 1
@@ -43,7 +39,6 @@ def build(word_list, n):
   # print(markovchain)
   return markovchain
     
-chain = build(text3, 3)
 
 """
 create markov chain dict
@@ -84,8 +79,14 @@ def write_sentence(length, markovchain):
       first_pair = random.choice(list(markovchain.keys()))
 
     wordcount += 1
-  
-  print(sentence)
+  return sentence
 
-write_sentence(20, chain)
+if __name__ == '__main__':
+  text = 'Let’s look at a concrete example. Say we start at state A. Our first random choice is between states man and dog,, each with probability 1/2 - say we take dog,. Now we don’t have any choice,'.split(' ')
+  text2 = read_file("./sanderson.txt")
+
+  simpsonsDict = read_csv('./simpsons_dataset.csv')
+  text3 = tokenize(simpsonsDict['Homer Simpson'])
+  chain = build(text3, 3)
+  write_sentence(20, chain)
 # print(len(chain.keys()))

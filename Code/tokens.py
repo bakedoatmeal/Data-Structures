@@ -10,7 +10,10 @@ def split_on_whitespace(text):
 def remove_punctuation(text):
   no_punc_text = re.sub('[,.\!()]', '', text)
   no_punc_text = re.sub('--', ' ', no_punc_text)
+  no_punc_text = no_punc_text.lower()
   return no_punc_text
+
+
 
 if __name__ == '__main__':
   import sys 

@@ -9,17 +9,16 @@ def read_file(filename):
   #       #   text = text.replace(element, "")
   #       word_list.append(word)
     text = f.read()
-    text = text.replace("\n", " ")
-    text = text.lower()
+    # text = text.replace("\n", " ")
+    # text = text.lower()
 
-    punctuation = '''!()-[]{\}\;:"”“\,<>./?@#$%^&*_~'''
+    # punctuation = '''!()-[]{\}\;:"”“\,<>./?@#$%^&*_~'''
 
-    # remove punctuation
-    for element in text:
-        if element in punctuation:
-            text = text.replace(element, "")
+    # # remove punctuation
+    # for element in text:
+    #     if element in punctuation:
+    #         text = text.replace(element, "")
     
-    word_list = text.split(' ')
     # print(word_list)
-  return word_list
+  return text
   

@@ -1,0 +1,32 @@
+body {
+  background-color: rgb(51, 128, 244) ;
+  color: white;
+  font-size: 25px;
+  height: 80vh;
+}
+
+.quote {
+  width: 800px;
+  margin: 30px;
+  margin-top: 20%;
+  border: 3px solid white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+button {
+  border: none;
+  font-size: 20px;
+  background-color: white;
+  color: rgb(51, 128, 244);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+img {
+  position: absolute;
+  width: 40%;
+  top: 200px;
+  margin-top: 0;
+  margin-left: 50%;
+}
